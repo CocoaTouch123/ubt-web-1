@@ -45,24 +45,26 @@ angular.module('moduleName', [
 
 首先，让产品经理到大数据组申请一份埋点 ID 列表（每个埋点都有全局的唯一 ID）。
 
-然后需要对 HTML 做一些操作，具体操作如下：
+然后需要对 HTML 做一些操作，具体操作如下
+(支持 `ubt-click` 和 `ubtClick` 两种风格)：
 
 ```html
 <a href="#" ubt-click="埋点 ID">我是一个需要监控点击的链接</a>
 
 <button ubt-click="埋点 ID">我是一个需要监控点击的按钮</button>
 
-<div ubt-click="埋点 ID">我是一个需要监控点击的元素</div>
+<div ubtClick="埋点 ID">我是一个需要监控点击的元素</div>
 ```
 
 ##### change 监控
 
-同点击监控一样只不过这里监控元素的 change 事件。
+同点击监控一样只不过这里监控元素的 change 事件,
+(支持 `ubt-change` 和 `ubtChange` 两种风格)。
 
 ```html
 <input ubt-change="埋点 ID" />
 
-<select ubt-change="埋点 ID">
+<select ubtChange="埋点 ID">
   <option value="1">item1</option>
   <option value="2">item2</option>
 </select>
@@ -71,9 +73,11 @@ angular.module('moduleName', [
 ##### visit 监控
 
 当需要监控一个元素是否在页面上显示时就使用这个。
+(支持 `ubt-visit` 和 `ubtVisit` 两种风格)：
 
 ```html
 <div ubt-visit="埋点 ID">aaaa</div>
+<div ubtVisit="埋点 ID">aaaa</div>
 ```
 
 注意，如果元素是隐藏的则不会触发。
